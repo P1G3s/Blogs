@@ -11,3 +11,13 @@ body {
 	background-color: #BDBDBD;
 	color: #000000;
 }
+
+.code {
+	font-family: "Tamzen";
+	font-size: 18px;
+	background-color: #CECECE;
+	color: #000000;
+	border: 3px solid #848484;
+	margin: 10px;
+}
+
