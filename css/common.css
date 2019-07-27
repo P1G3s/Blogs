@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "Tamzen";
+	src: url("./Tamzen/tamzen10x20b-webfont.woff") format("woff"),
+	url("./Tamzen/tamzen10x20b-webfont.ttf") format("truetype"),
+	url("./Tamzen/Tamzen10x20b.svg#filename") format("svg");
+}
+
+body {
+	font-family: "Tamzen";
+	font-size: 20px;
+	background-color: #BDBDBD;
+	color: #000000;
+}
