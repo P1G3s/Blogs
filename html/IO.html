@@ -1,0 +1,42 @@
+<head> 
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+</head>
+
+
+<h1 id="io">I/O</h1>
+<p><strong>Input and output</strong> is basically about <strong>Read</strong> and <strong>Write</strong>, but that&#39;s not all of it, before doing so, some condition should be met first :</p>
+<ol>
+<li><strong>Open</strong> the file  </li>
+<li>A <strong>Buffer</strong></li>
+<li>The <strong>Position</strong> where IO process </li>
+<li>Proceed <strong>READ/WRITE</strong></li>
+<li><strong>Close</strong>   </li>
+</ol>
+<p>In a word :</p>
+<ul>
+<li><strong>Read</strong> bytes from the <strong>Position</strong> into the <strong>Buffer</strong><br>or </li>
+<li><strong>Write</strong> bytes from the <strong>Buffer</strong>  into the <strong>Position</strong> </li>
+</ul>
+<h3 id="file-descriptor">File Descriptor</h3>
+<ul>
+<li>Indicates the file </li>
+<li><strong>Open file descriptor table</strong> -----&gt; <strong>Open file table</strong> -----&gt; <strong>i-node table</strong> (lowest level, means file itself?)    </li>
+</ul>
+<h3 id="read--write">Read &amp; Write</h3>
+<ul>
+<li><p><strong>pread() &amp; pwrite()</strong> -- need to specify the offset when using these functions, and offset will be reset after being used </p>
+</li>
+<li><p><strong>readv() &amp; writev()</strong> -- involves mutiple buffers</p>
+</li>
+<li><p>truncate() </p>
+</li>
+</ul>
+<h3 id="position">Position</h3>
+<ul>
+<li><strong>lseek()</strong><br><strong>Two different fds</strong> would share the same offset if they both indicate the same item(Open file handle) in the <strong>Open file table</strong> </li>
+</ul>
+<h3 id="atomic-operation--race-condition">Atomic operation &amp; Race condition</h3>
+<ul>
+<li><strong>Protect process&#39; doing from unexpected interuption</strong>, make the operation more secure (e.g. <strong>P90[5-3]</strong> O_APPEND and lseek(fd,offset,SEEK_END))</li>
+</ul>
