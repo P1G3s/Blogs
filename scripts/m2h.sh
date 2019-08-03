@@ -8,7 +8,7 @@ templates=../templates/
 headPath=${templates}head.html
 tempIndex=${templates}index.html
 linkDir=./html/
-line=16
+line=27
 
 cd ${mdDir}
 cp ${mdDir}* ${backupDir}
