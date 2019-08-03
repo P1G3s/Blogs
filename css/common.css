@@ -21,10 +21,19 @@ body {
 	margin: 10px;
 }
 
+.blogs {
+	font-family: "Tamzen";
+	font-size: 18px;
+	background-color: #CECECE;
+	color: #000000;
+	border: 3px solid #848484;
+	margin: 10px;
+}
+
 strong{
 	color:#E00
 }
 
 h1,h2,h3,h4{
-	color:#080
+	color:#008
 }

@@ -4,16 +4,21 @@ mdDir=../md/
 htmlDir=../html/
 cacheDir=../.cache/
 backupDir=../.backup/
-headPath=../templates/head.html
+templates=../templates/
+headPath=${templates}head.html
+index=${templates}index.html
+linkDir=./html/
+line=16
 
 cd ${mdDir}
 cp ${mdDir}* ${backupDir}
 rm ${cacheDir}*
+
 # transfer .md to .html
 for f in *.md; do
 	# get rid of .md extension and append .html
-	targetName=$(echo $f | sed 's/\.md$//')
-	targetName=$(echo ${targetName}.html)
+	name=$(echo $f | sed 's/\.md$//')
+	targetName=$(echo ${name}.html)
 
 	# convert md to html (without head)  (to .cache dir)
 	marked ${mdDir}${f} -o ${cacheDir}${targetName}
@@ -22,6 +27,8 @@ for f in *.md; do
 	cat ${headPath} ${cacheDir}${targetName} > ${htmlDir}${targetName}
 
 	echo ${f} converted to ${targetName}.html
+
+	sed "${line}i <a href=\"${linkDir}${targetName}\">${name}</a>" ${index} > ../test.html
 done
 
 
