@@ -28,6 +28,7 @@ for f in *.md; do
 
 	echo ${f} converted to ${targetName}.html
 
+	# insert link to index.html
 	sed "${line}i <a href=\"${linkDir}${targetName}\">${name}</a>" ${tempIndex} > ../index.html
 done
 
