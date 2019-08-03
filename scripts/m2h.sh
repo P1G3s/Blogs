@@ -6,7 +6,7 @@ cacheDir=../.cache/
 backupDir=../.backup/
 templates=../templates/
 headPath=${templates}head.html
-index=${templates}index.html
+tempIndex=${templates}index.html
 linkDir=./html/
 line=16
 
@@ -28,7 +28,7 @@ for f in *.md; do
 
 	echo ${f} converted to ${targetName}.html
 
-	sed "${line}i <a href=\"${linkDir}${targetName}\">${name}</a>" ${index} > ../test.html
+	sed "${line}i <a href=\"${linkDir}${targetName}\">${name}</a>" ${tempIndex} > ../index.html
 done
 
 
