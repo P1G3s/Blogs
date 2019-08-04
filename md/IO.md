@@ -33,3 +33,6 @@ or
 
 ### Atomic operation & Race condition
 - **Protect process' doing from unexpected interuption**, make the operation more secure (e.g. **P90[5-3]** O_APPEND and lseek(fd,offset,SEEK_END))
+
+### File hole
+- Sort of like a **reserved area**, waited for later usage. Campared with a file stuffed with the same amount of characters instead of "holes", they seem to have the same logical size under **ls command**, but they dont share the same block size, the one with "holes" probably consumes less blocks of disk. 

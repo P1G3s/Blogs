@@ -4,9 +4,12 @@ mdDir=../md/
 htmlDir=../html/
 cacheDir=../.cache/
 backupDir=../.backup/
+
 templates=../templates/
 headPath=${templates}head.html
+tailPath=${templates}tail.html
 tempIndex=${templates}index.html
+
 linkDir=./html/
 line=27
 
@@ -24,7 +27,7 @@ for f in *.md; do
 	marked ${mdDir}${f} -o ${cacheDir}${targetName}
 
 	# cat head.html and (cache).html to (targetName).html
-	cat ${headPath} ${cacheDir}${targetName} > ${htmlDir}${targetName}
+	cat ${headPath} ${cacheDir}${targetName} ${tailPath}> ${htmlDir}${targetName}
 
 	echo ${f} converted to ${targetName}.html
 
