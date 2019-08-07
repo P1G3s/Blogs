@@ -16,6 +16,13 @@ line=27
 cd ${mdDir}
 cp ${mdDir}* ${backupDir}
 rm ${cacheDir}*
+if [[ $(ls ../index.html) ]]; then
+	mv ../index.html ../.cache
+	cp ${tempIndex} ../
+else 
+	echo "create index.html"
+	cp ${tempIndex} ../
+fi
 
 # transfer .md to .html
 for f in *.md; do
@@ -29,10 +36,10 @@ for f in *.md; do
 	# cat head.html and (cache).html to (targetName).html
 	cat ${headPath} ${cacheDir}${targetName} ${tailPath}> ${htmlDir}${targetName}
 
-	echo ${f} converted to ${targetName}.html
+	echo ${f} converted to ${targetName}
 
 	# insert link to index.html
-	sed "${line}i <a href=\"${linkDir}${targetName}\">${name}</a>" ${tempIndex} > ../index.html
+	sed -i "${line}i <a href=\"${linkDir}${targetName}\">${name}</a><br>" ../index.html
 done
 
 

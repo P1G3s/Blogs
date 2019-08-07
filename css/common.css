@@ -49,8 +49,17 @@ strong{
 	color:#E00
 }
 
-h1,h2,h3,h4{
+h1{
+	color:#E7912C
+}
+
+h2,h3,h4{
 	color:#008
+}
+
+img{
+	width:50%;
+	height:auto;
 }
 
 a:visited	{color:#0000FF}

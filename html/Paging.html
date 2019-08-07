@@ -1,0 +1,55 @@
+<head> 
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+	<title> P1G3s' Blog </title>
+</head>
+
+
+<h1 id="paging">Paging</h1>
+<h3 id="goal">Goal</h3>
+<ul>
+<li>To allow <strong>more processes</strong> to run at lower cost</li>
+<li>To <strong>Protect</strong> the data of the process from being corrupted by one another </li>
+<li>...</li>
+</ul>
+<h3 id="components">Components</h3>
+<ul>
+<li>Process</li>
+<li>Process address space<ul>
+<li>Logical address?  --&gt; Virtual address  </li>
+</ul>
+</li>
+<li>Page Table <ul>
+<li>Virtual address --&gt; Physical address</li>
+</ul>
+</li>
+<li>Virtual Memory<ul>
+<li>Pages </li>
+</ul>
+</li>
+<li>Random Access Memory<ul>
+<li>Page Frams </li>
+</ul>
+</li>
+</ul>
+<h3 id="how-">How ?</h3>
+<p>Pic from the <a href="https://www.youtube.com/watch?v=6neHHkI0Z0o&amp;t=26s">video</a>  </p>
+<p><img src="../images/Paging.png" alt="Paging"></p>
+<h3 id="cautions-"><em>Cautions! :</em></h3>
+<ul>
+<li><p>There is a table (Process address space) between <strong>Process</strong> and <strong>Page table</strong>, if Process access Page Table directly, there will be no protection for the data of each memory, since each virtual address in Page table is corresponding to a physical address. </p>
+</li>
+<li><p><strong>VM</strong> (<strong>RAM</strong>) is divided to many <strong>Pages</strong> (<strong>Page frames</strong>) - To reduce page table size</p>
+</li>
+<li><p><strong>Page Size</strong> means the size of a Page, which stores data (<strong>NOT Entries</strong>)! </p>
+</li>
+<li><p><strong>Data</strong> in memory are byte addressible, which means each address stores a <strong>byte</strong>. A page whose size is 4096KB implys that there should be 4096K entries for every data (byte), therefore 12 bits for offset is needed.</p>
+</li>
+</ul>
+<br>
+<hr>
+<br>
+<div class="tail">
+	>> <a href="../index.html">index</a> <<
+</div>
+	
