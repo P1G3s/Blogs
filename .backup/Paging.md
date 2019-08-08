@@ -1,6 +1,6 @@
 # Paging
 
-### Goal   
+### Goals   
 - To allow **more processes** to run at lower cost
 - To **Protect** the data of the process from being corrupted by one another 
 - ...
