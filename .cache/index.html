@@ -7,32 +7,36 @@
 	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<script>
+		function blink(){
+			var currentState = document.getElementById("blink").style.visibility
+			if (currentState == "visible")
+				document.getElementById("blink").style.visibility="hidden";
+			else 
+				document.getElementById("blink").style.visibility="visible";
+		}
+	setInterval("blink()",600);
+	</script>
 </head>
 <body>
-	<p style="text-align:center; font-size:22px;">Good day sir. Welcome to the blog :)</p>
+	<p style="text-align:center; font-size:22px;">Good day sir. Welcome to the blog<span id=blink>_</div></p>
 
 	<div class="description">
+<a href="./html/Paging.html">Paging</a><br>
+<a href="./html/IO.html">IO</a><br>
+<a href="./html/File.html">File</a><br>
 		<p style="text-align:left">
 			This is the place where i keep some of my tiny knowledge, mostly recaps, not meant to contain too much detail. 
 			its main purpose is to make my life easier and ease the pain of my IQ-critical brain, 
-			but i do hope you find something or help me find something useful here. 
-			Since this is a static website, there will be no comments and discussions, 
-			if problems are encountered, please feel free to contact me via email-><a href="mailto:brainpressurecriticalexception@gmail.com">P1G3s</a>
-			And again, 
-			thanks for arriving my lord. 
+			but i do hope you enjoy the stuff here.
+			Please feel free to leave your comments below, it could be really helpful :D <br>
+			And again, thanks for arriving my lord. 
 		</p>
 	</div>
 	<p style="text-align:center; font-size:22px;">Content</p>
 	<div class="blogs">
-<a href="./html/Paging.html">Paging</a><br>
-<a href="./html/IO.html">IO</a><br>
-<a href="./html/File.html">File</a><br>
+
 	</div>
-
-
-
-
-
 </body>
 </html>
 

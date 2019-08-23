@@ -11,7 +11,7 @@ tailPath=${templates}tail.html
 tempIndex=${templates}index.html
 
 linkDir=./html/
-line=27
+line=35
 
 cd ${mdDir}
 cp ${mdDir}* ${backupDir}
