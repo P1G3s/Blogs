@@ -11,7 +11,7 @@ tailPath=${templates}tail.html
 tempIndex=${templates}index.html
 
 linkDir=./html/
-line=35
+line=36
 
 cd ${mdDir}
 cp ${mdDir}* ${backupDir}
@@ -39,7 +39,7 @@ for f in *.md; do
 	echo ${f} converted to ${targetName}
 
 	# insert link to index.html
-	sed -i "${line}i <a href=\"${linkDir}${targetName}\">${name}</a><br>" ../index.html
+	sed -i "${line}i - <a href=\"${linkDir}${targetName}\">${name}</a><br>" ../index.html
 done
 
 
