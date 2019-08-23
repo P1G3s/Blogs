@@ -1,4 +1,5 @@
 # I/O
+
 **Input and output** is basically about **Read** and **Write**, but that's not all of it, before doing so, some condition should be met first :
 
 1. **Open** the file  

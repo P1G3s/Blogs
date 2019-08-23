@@ -1,0 +1,65 @@
+<head> 
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<title> P1G3s' Blog </title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+</head>
+
+
+<h1 id="file">File</h1>
+<pre><code class="language-mermaid">graph LR;
+    disc--&gt; partition; partition --&gt; filesystem;
+    disc--&gt; partition...;partition... --&gt; filesystem...;
+    filesystem --&gt; superblock;
+    filesystem --&gt; i-node-table;
+    subgraph i-node table
+    i-node-table--&gt;i-node_130;
+    i-node-table--&gt;i-node_501;
+    i-node-table--&gt;i-node_...;
+    i-node_130--&gt;datablock_1000;
+    i-node_130--&gt;datablock_1600;
+    i-node_130--&gt;datablock_3000;
+    datablock_1000---|&#39;cat&#39;|file;
+    datablock_1600---|&#39;cat&#39;|file;
+    datablock_3000---|&#39;cat&#39;|file;
+    end
+    filesystem --&gt; datablocks;</code></pre>
+<p><strong>the numbers above are all made up of course</strong></p>
+<h3 id="caution">Caution</h3>
+<ul>
+<li>Each i-node has a table which contains 13 blocks</li>
+<li>Each <strong>Block</strong> indicates a <strong>Data Block</strong> which either stores <strong>data</strong> or <strong>i-nodes</strong>(for large file of course) </li>
+</ul>
+<br>
+<hr>
+<br>
+<div class="tail">
+	>> <a href="../index.html">index</a> <<
+</div>	
+<script>
+	var config = {
+		startOnLoad:true,
+		flowchart:{
+				useMaxWidth:false,
+				htmlLabels:true
+			}
+	};
+	mermaid.initialize(config);
+	window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+<div id="gitalk-container"></div>
+<script>
+	const gitalk = new Gitalk({
+	clientID: '7f9c8a2b3724150747ba',
+	clientSecret: '53cd0de601f775cc764722b6f3da32145e9027aa',
+	repo: 'Blogs',
+	owner: 'P1G3s',
+	admin: 'P1G3s',
+	id: location.pathname,      // Ensure uniqueness and length less than 50
+	distractionFreeMode: false  // Facebook-like distraction free mode
+	})
+
+	gitalk.render('gitalk-container')
+</script>

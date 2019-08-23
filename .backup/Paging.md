@@ -27,6 +27,6 @@ Pic from the [video](https://www.youtube.com/watch?v=6neHHkI0Z0o&t=26s)
 
 - **VM** (**RAM**) is divided to many **Pages** (**Page frames**) - To reduce page table size
 
-- **Page Size** means the size of a Page, which stores data (**NOT Entries**)! 
+- **Page Size** means the size of a Page which stores data (**NOT Entries**)! 
 
 - **Data** in memory are byte addressible, which means each address stores a **byte**. A page whose size is 4096KB implys that there should be 4096K entries for every data (byte), therefore 12 bits for offset is needed.
