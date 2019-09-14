@@ -32,6 +32,23 @@
 <li>Each i-node has a table which contains 13 blocks</li>
 <li>Each <strong>Block</strong> indicates a <strong>Data Block</strong> which either stores <strong>data</strong> or <strong>i-nodes</strong>(for large file of course) </li>
 </ul>
+<h3 id="directory">Directory</h3>
+<ul>
+<li><strong>Directory</strong> is a list which contains <strong>file name</strong> and its corresponding <strong>i-node</strong> <h3 id="links">Links</h3>
+</li>
+<li><strong>Hard Link</strong> is another reference to the i-node whereas <strong>Soft Link</strong> is a reference to a path.</li>
+<li>Creating <strong>Hard Link</strong> would result the increase of the links number, once drops down0, the actual data of the file will be free. </li>
+</ul>
+<h3 id="device">Device</h3>
+<ul>
+<li>Each <strong>Device</strong> has its corresponding <strong>Driver</strong>, for example, the system call - read, every time the read is called, the following steps would be proceeded:<ul>
+<li>1.Kernel would examine the i-node through the file descriptor.</li>
+<li>2.Kernel would figure out what kind of the file is (property &#39;st_mode&#39; in struct &#39;stat&#39;). </li>
+<li>3.Kernel would instead call the corresponding driver&#39;s read funciton to read.</li>
+</ul>
+</li>
+<li>There are different sets of properties for different kind of files (e.g, buffer for <strong>Disk file</strong>), which can be alter or acquire by function <strong>fcntl()</strong> or <strong>ioctl()</strong> ( fcntl() acts only on <strong>FILES</strong> whereas ioctl() acts on both <strong>FILES</strong> and <strong>DEVICES</strong> ).</li>
+</ul>
 <br>
 <hr>
 <br>
