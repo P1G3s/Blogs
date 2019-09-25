@@ -37,3 +37,6 @@ or
 
 ### File hole
 - Sort of like a **reserved area**, waited for later usage. Campared with a file stuffed with the same amount of characters instead of "holes", they seem to have the same logical size under **ls command**, but they dont share the same block size, the one with "holes" probably consumes less blocks of disk. 
+
+### Asynchronous IO
+- **Asynchronous IO** is not happening between IOs, but between **programs depend on IO** and **others that do not**.
