@@ -38,5 +38,14 @@ or
 ### File hole
 - Sort of like a **reserved area**, waited for later usage. Campared with a file stuffed with the same amount of characters instead of "holes", they seem to have the same logical size under **ls command**, but they dont share the same block size, the one with "holes" probably consumes less blocks of disk. 
 
-### Asynchronous IO
+### Asynchronous I/O
 - **Asynchronous IO** is not happening between IOs, but between **programs depend on IO** and **others that do not**.
+
+### Standard I/O
+- Standard I/O exists in every UNIX utility, it is meant to manage the utility's **input stream** (stdin 0) **output stream** (stdout 1), **error message** (stderr 2), and all of them is connected to the **Terminal** by default, unless they are changed by '>' (Redirect). (**Standard I/O can be connected to anywhere by using '>' in shell, 'close-then-open' in C program**).
+
+- The proccess of **"who > file1"** 
+	- fork()
+	- close(stdout) **in child proccess** (_parent proccess remain unchanged_)
+	- open(file1), if not exist then create(file1), meanwhile, file1's fd **in child proccess** is now 1 - stdout.
+	- exec(who) - only the code of child proccess is changed, "who" prints its output to stdout **without noticing stdout is now indicating file1**

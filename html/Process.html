@@ -26,17 +26,12 @@
 <ul>
 <li>TCB table + Memory(Stack, Heap, Data Seg, Code Seg ...)</li>
 <li>...</li>
-<li>Insert The TCB to the queue?</li>
-</ul>
-<p><strong>To keep execution in order  and avoid unexpected behavior</strong></p>
-<pre><code class="language-mermaid">graph LR;
-    ProcessA --&gt; Syn{Synchronized};
-    ProcessB --&gt; Syn{Synchronized};
-    Syn --&gt; CTS[Critical Resource];</code></pre>
-<ul>
+<li>Insert The TCB to the queue?<ul>
 <li>WIP</li>
 </ul>
-<h4 id="unixlinux">(Unix/Linux)</h4>
+</li>
+</ul>
+<h4 id="creation-of-processunixlinux">Creation of Process(Unix/Linux)</h4>
 <ul>
 <li>Every Process has a <strong>Parent Process</strong></li>
 <li>Use <strong>fork()</strong> to create a child process by exactly <strong>copying</strong> the parent process along with <strong>Stack, Data, Heap, Code</strong> etc.</li>
@@ -44,6 +39,16 @@
 <li><em>WIP...</em></li>
 </ul>
 <h3 id="signal">Signal</h3>
+<ul>
+<li><strong>Sigaction()</strong> has <strong>Blocked Signal Set</strong> (sa_mask) whereas <strong>Signal()</strong> does not (A blocked signal handler needs to be inserted into the handler which <strong>Signal</strong> is refering to)</li>
+<li>Protect <strong>Critical Resource</strong> from being corrupted.<pre><code class="language-mermaid">graph LR;
+ Signal --Coordinate--&gt; ProcessA
+ Signal --Coordinate--&gt; ProcessB
+ ProcessA --&gt; Syn{Synchronized};
+ ProcessB --&gt; Syn{Synchronized};
+ Syn --&gt; CTS[Critical Resource];</code></pre>
+</li>
+</ul>
 <br>
 <hr>
 <br>
