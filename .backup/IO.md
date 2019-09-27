@@ -44,8 +44,15 @@ or
 ### Standard I/O
 - Standard I/O exists in every UNIX utility, it is meant to manage the utility's **input stream** (stdin 0) **output stream** (stdout 1), **error message** (stderr 2), and all of them is connected to the **Terminal** by default, unless they are changed by '>' (Redirect). (**Standard I/O can be connected to anywhere by using '>' in shell, 'close-then-open' in C program**).
 
-- The proccess of **"who > file1"** 
+- The proccess of **"who > file1"**
 	- fork()
 	- close(stdout) **in child proccess** (_parent proccess remain unchanged_)
 	- open(file1), if not exist then create(file1), meanwhile, file1's fd **in child proccess** is now 1 - stdout.
 	- exec(who) - only the code of child proccess is changed, "who" prints its output to stdout **without noticing stdout is now indicating file1**
+
+- **Pipe** is created by pipe() with two **file descriptor** representing **two sides of pipe - input(1) and output(0)**, To make pipe works like "|" in shell, following steps shall be taken (child | parent)    
+	- fork()
+	- change **stdout** to **pipe input** in child proccess
+	- exec child  program
+	- change **stdin** to **pipe output** in parent proccess
+	- exec parent program

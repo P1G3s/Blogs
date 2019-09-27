@@ -25,7 +25,8 @@
 <ul>
 <li>Every Process has a <strong>Parent Process</strong></li>
 <li>Use <strong>fork()</strong> to create a child process by exactly <strong>copying</strong> the parent process along with <strong>Stack, Data, Heap, Code</strong> etc.</li>
-<li><strong>Execve()</strong> tells the process to run another program&#39;s code instead of his parent&#39;s code.</li>
+<li><strong>Exec()</strong> tells the process to run another program&#39;s code instead of its parent code. (<a href="https://stackoverflow.com/questions/32899582/why-the-exec-family-of-functions-doesnt-execute-the-code-after-exec">Exec() family wont execute the code after themselves, because code has been replaced with new program</a>)</li>
+<li>exec() = execute.   popen() = execute(<strong>Set PipeEntrance</strong>) &amp;&amp; return execution ouput(<strong>FILE *PipeExit</strong>).</li>
 <li><em>WIP...</em></li>
 </ul>
 <h3 id="signal">Signal</h3>

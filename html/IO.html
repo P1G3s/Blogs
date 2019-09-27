@@ -8,6 +8,7 @@
 </head>
 <a href="../index.html">&lt;&lt;index</a>
 
+<div class="blogs">
 <h1 id="io">I/O</h1>
 <p><strong>Input and output</strong> is basically about <strong>Read</strong> and <strong>Write</strong>, but that&#39;s not all of it, before doing so, some condition should be met first :</p>
 <ol>
@@ -56,7 +57,7 @@
 <ul>
 <li><p>Standard I/O exists in every UNIX utility, it is meant to manage the utility&#39;s <strong>input stream</strong> (stdin 0) <strong>output stream</strong> (stdout 1), <strong>error message</strong> (stderr 2), and all of them is connected to the <strong>Terminal</strong> by default, unless they are changed by &#39;&gt;&#39; (Redirect). (<strong>Standard I/O can be connected to anywhere by using &#39;&gt;&#39; in shell, &#39;close-then-open&#39; in C program</strong>).</p>
 </li>
-<li><p>The proccess of <strong>&quot;who &gt; file1&quot;</strong> </p>
+<li><p>The proccess of <strong>&quot;who &gt; file1&quot;</strong></p>
 <ul>
 <li>fork()</li>
 <li>close(stdout) <strong>in child proccess</strong> (<em>parent proccess remain unchanged</em>)</li>
@@ -64,7 +65,17 @@
 <li>exec(who) - only the code of child proccess is changed, &quot;who&quot; prints its output to stdout <strong>without noticing stdout is now indicating file1</strong></li>
 </ul>
 </li>
+<li><p><strong>Pipe</strong> is created by pipe() with two <strong>file descriptor</strong> representing <strong>two sides of pipe - input(1) and output(0)</strong>, To make pipe works like &quot;|&quot; in shell, following steps shall be taken (child | parent)    </p>
+<ul>
+<li>fork()</li>
+<li>change <strong>stdout</strong> to <strong>pipe input</strong> in child proccess</li>
+<li>exec child  program</li>
+<li>change <strong>stdin</strong> to <strong>pipe output</strong> in parent proccess</li>
+<li>exec parent program</li>
 </ul>
+</li>
+</ul>
+</div>
 <br>
 <hr>
 <br>

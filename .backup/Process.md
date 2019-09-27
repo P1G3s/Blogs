@@ -23,7 +23,8 @@ graph LR;
 #### Creation of Process(Unix/Linux)
  - Every Process has a **Parent Process**
  - Use **fork()** to create a child process by exactly **copying** the parent process along with **Stack, Data, Heap, Code** etc.
- - **Execve()** tells the process to run another program's code instead of his parent's code.
+ - **Exec()** tells the process to run another program's code instead of its parent code. ([Exec() family wont execute the code after themselves, because code has been replaced with new program](https://stackoverflow.com/questions/32899582/why-the-exec-family-of-functions-doesnt-execute-the-code-after-exec))
+ - exec() = execute.   popen() = execute(__Set PipeEntrance__) && return execution ouput(__FILE *PipeExit__).
  - _WIP..._
 
 ### Signal
