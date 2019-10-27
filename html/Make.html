@@ -1,0 +1,66 @@
+<head> 
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<title> P1G3s' Blog </title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+</head>
+<a href="../index.html">&lt;&lt;index</a>
+
+<div class="blogs">
+<h1 id="make">Make</h1>
+<h3 id="rule">Rule</h3>
+<p><strong>Targets... : Prerequisites</strong><br>
+&emsp;   <strong>Recipes...</strong> </p>
+<h3 id="implicit-rule">Implicit Rule</h3>
+<ul>
+<li>Pattern Rule<ul>
+<li>Automatic Variable<ul>
+<li>$@ (File name of the target of the rule)</li>
+<li>$% (Target member name)</li>
+<li>$^ (Names of all  prerequisites)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Prerequisite (also a target)<ul>
+<li>if the prerequisite cant not be found, then Make would see it as a target and execute the implicit rule for each one of them. (make $(EXE))</li>
+</ul>
+</li>
+</ul>
+<h3 id="caution">Caution</h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/57383111/appending-library-name-to-cflags-in-makefile">The list of libraries should go to LDLIBS, not CFLAGS</a></li>
+<li>Use &quot;+=&quot; to append text to variable itself</li>
+<li><a href="https://stackoverflow.com/questions/6856263/what-is-the-difference-between-make-and-make-all">Target order does matter</a></li>
+</ul>
+</div>
+<br>
+<hr>
+<br>
+<script>
+	var config = {
+		startOnLoad:true,
+		flowchart:{
+				useMaxWidth:false,
+				htmlLabels:true
+			}
+	};
+	mermaid.initialize(config);
+	window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+<div id="gitalk-container"></div>
+<script>
+	const gitalk = new Gitalk({
+	clientID: '7f9c8a2b3724150747ba',
+	clientSecret: '53cd0de601f775cc764722b6f3da32145e9027aa',
+	repo: 'Blogs',
+	owner: 'P1G3s',
+	admin: 'P1G3s',
+	id: location.pathname,      // Ensure uniqueness and length less than 50
+	distractionFreeMode: false  // Facebook-like distraction free mode
+	})
+
+	gitalk.render('gitalk-container')
+</script>

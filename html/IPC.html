@@ -1,0 +1,57 @@
+<head> 
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<title> P1G3s' Blog </title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+</head>
+<a href="../index.html">&lt;&lt;index</a>
+
+<div class="blogs">
+<h1 id="ipc">IPC</h1>
+<h3 id="pipe">Pipe</h3>
+<p><strong>Pipe</strong> is created by pipe() with two <strong>file descriptor</strong> representing <strong>two sides of pipe - input(1) and output(0)</strong>, To make pipe works like &quot;|&quot; in shell, following steps shall be taken (child | parent)    </p>
+<ul>
+<li>fork()</li>
+<li>change <strong>stdout</strong> to <strong>pipe input</strong> in child proccess</li>
+<li>exec child  program</li>
+<li>change <strong>stdin</strong> to <strong>pipe output</strong> in parent proccess</li>
+<li>exec parent program</li>
+</ul>
+<h3 id="fifo">FIFO</h3>
+<p><strong>FIFO</strong> is a file that can be raed or write by proccesses, <strong>so fork() is no longer needed</strong> as long as proccesses can access this file(FIFO)</p>
+<ul>
+<li>open blocked until another proccess open</li>
+<li>read blocked until another proccess finished writting?</li>
+<li>write blocked until another proccess finishes reading?</li>
+</ul>
+</div>
+<br>
+<hr>
+<br>
+<script>
+	var config = {
+		startOnLoad:true,
+		flowchart:{
+				useMaxWidth:false,
+				htmlLabels:true
+			}
+	};
+	mermaid.initialize(config);
+	window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+<div id="gitalk-container"></div>
+<script>
+	const gitalk = new Gitalk({
+	clientID: '7f9c8a2b3724150747ba',
+	clientSecret: '53cd0de601f775cc764722b6f3da32145e9027aa',
+	repo: 'Blogs',
+	owner: 'P1G3s',
+	admin: 'P1G3s',
+	id: location.pathname,      // Ensure uniqueness and length less than 50
+	distractionFreeMode: false  // Facebook-like distraction free mode
+	})
+
+	gitalk.render('gitalk-container')
+</script>

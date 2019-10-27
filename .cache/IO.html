@@ -38,3 +38,20 @@
 <ul>
 <li>Sort of like a <strong>reserved area</strong>, waited for later usage. Campared with a file stuffed with the same amount of characters instead of &quot;holes&quot;, they seem to have the same logical size under <strong>ls command</strong>, but they dont share the same block size, the one with &quot;holes&quot; probably consumes less blocks of disk. </li>
 </ul>
+<h3 id="asynchronous-io">Asynchronous I/O</h3>
+<ul>
+<li><strong>Asynchronous IO</strong> is not happening between IOs, but between <strong>programs depend on IO</strong> and <strong>others that do not</strong>.</li>
+</ul>
+<h3 id="standard-io">Standard I/O</h3>
+<ul>
+<li><p>Standard I/O exists in every UNIX utility, it is meant to manage the utility&#39;s <strong>input stream</strong> (stdin 0) <strong>output stream</strong> (stdout 1), <strong>error message</strong> (stderr 2), and all of them is connected to the <strong>Terminal</strong> by default, unless they are changed by &#39;&gt;&#39; (Redirect). (<strong>Standard I/O can be connected to anywhere by using &#39;&gt;&#39; in shell, &#39;close-then-open&#39; in C program</strong>).</p>
+</li>
+<li><p>The proccess of <strong>&quot;who &gt; file1&quot;</strong></p>
+<ul>
+<li>fork()</li>
+<li>close(stdout) <strong>in child proccess</strong> (<em>parent proccess remain unchanged</em>)</li>
+<li>open(file1), if not exist then create(file1), meanwhile, file1&#39;s fd <strong>in child proccess</strong> is now 1 - stdout.</li>
+<li>exec(who) - only the code of child proccess is changed, &quot;who&quot; prints its output to stdout <strong>without noticing stdout is now indicating file1</strong></li>
+</ul>
+</li>
+</ul>

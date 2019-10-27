@@ -1,6 +1,6 @@
 # !/bin/bash
 
-mdDir=../md/
+mdDir=~/Documents/Blogs/md/
 htmlDir=../html/
 cacheDir=../.cache/
 backupDir=../.backup/
