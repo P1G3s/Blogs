@@ -25,7 +25,7 @@ Pic from the [video](https://www.youtube.com/watch?v=6neHHkI0Z0o&t=26s)
 ### Caution   
 - There is a table (Process address space) between **Process** and **Page table**, if Process access Page Table directly, there will be no protection for the data of each memory, since each virtual address in Page table is corresponding to a physical address. 
 
-- **VM** (**RAM**) is divided to many **Pages** (**Page frames**) - To reduce page table size
+- **VM**/**RAM** is divided to many **Pages**/**Page frames** - To reduce page table size
 
 - **Page Size** means the size of a Page which stores data (**NOT Entries**)! 
 
