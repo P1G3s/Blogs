@@ -22,7 +22,6 @@ graph LR;
 **the numbers above are all made up of course**
 
 ### Caution
-<<<<<<< HEAD
  - Each i-node has a table which contains 13 blocks
  - Each **Block** indicates a **Data Block** which either stores **data** or **i-nodes**(for large file of course) 
 
@@ -35,6 +34,7 @@ graph LR;
 
 ### Directory
 - **Directory** is a list which contains **file name** and its corresponding **i-node** 
+
 ### Links
 - **Hard Link** is another reference to the i-node whereas **Soft Link** is a reference to a path.
 - Creating **Hard Link** would result the increase of the links number, once drops down0, the actual data of the file will be free. 
@@ -46,4 +46,3 @@ graph LR;
 	- 3.Kernel would instead call the corresponding driver's read funciton to read.
 - There are different sets of properties for different kind of files (e.g, buffer for **Disk file**), which can be alter or acquire by function **fcntl()** or **ioctl()** ( fcntl() acts only on **FILES** whereas ioctl() acts on both **FILES** and **DEVICES** ).
 
->>>>>>> 0cebcd13237a7a56a170c6113ca6a281e001af4e
