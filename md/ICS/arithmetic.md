@@ -13,7 +13,7 @@ graph LR;
 ```
 
 <hr>
-----|------Signed------|------Signed==Unsigned------|------Unsigned------|---- <br>
+----|------Signed------|------Signed & Unsigned------|------Unsigned------|---- <br>
 [TMIN]&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[0]&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;[TMAX]&emsp;&emsp;&emsp;&emsp;&emsp;[UMAX]
 
 

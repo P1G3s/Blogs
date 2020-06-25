@@ -2,7 +2,7 @@
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
 	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-	<title> P1G3s' Blog </title>
+	<title> Blog </title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
 	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 </head>
@@ -11,7 +11,7 @@
 <div class="blogs">
 <h1 id="ipc">IPC</h1>
 <h3 id="pipe">Pipe</h3>
-<p><strong>Pipe</strong> is created by pipe() with two <strong>file descriptor</strong> representing <strong>two sides of pipe - input(1) and output(0)</strong>, To make pipe works like &quot;|&quot; in shell, following steps shall be taken (child | parent)    </p>
+<p><strong>Pipe</strong> is created by pipe() with two <strong>file descriptor</strong> representing <strong>two sides of pipe - input(1) and output(0)</strong>, To make pipe works like &quot;|&quot; in shell, following steps shall be taken (child | parent) (<a href="https://unix.stackexchange.com/questions/37508/in-what-order-do-piped-commands-run">by the way pipe run concurrently</a>)</p>
 <ul>
 <li>fork()</li>
 <li>change <strong>stdout</strong> to <strong>pipe input</strong> in child proccess</li>

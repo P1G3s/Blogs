@@ -19,7 +19,7 @@
 ### How ?
 Pic from the [video](https://www.youtube.com/watch?v=6neHHkI0Z0o&t=26s)  
 
-![Paging](../images/Paging.png)
+![Paging](../images/Paging/Paging.png)
 
 
 ### Caution   

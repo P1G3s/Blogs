@@ -27,10 +27,9 @@ graph LR;
 
 ### Link
  - **Soft Link** : Indicates a **file name** (if the name of source flie is changed, the Link is over)
- - **Hard Link** : Indicates a **i-node** (the Link still functions even the source file is deleted) 
-=======
-- Each i-node has a table which contains 13 blocks
-- Each **Block** indicates a **Data Block** which either stores **data** or **i-nodes**(for large file of course) 
+ - **Hard Link** : Indicates a **i-node** (the Link still functions even the source file is deleted)
+ - Each i-node has a table which contains 13 blocks
+ - Each **Block** indicates a **Data Block** which either stores **data** or **i-nodes**(for large file of course) 
 
 ### Directory
 - **Directory** is a list which contains **file name** and its corresponding **i-node** 

@@ -1,7 +1,7 @@
 # IPC
 
 ### Pipe
-**Pipe** is created by pipe() with two **file descriptor** representing **two sides of pipe - input(1) and output(0)**, To make pipe works like "|" in shell, following steps shall be taken (child | parent)    
+**Pipe** is created by pipe() with two **file descriptor** representing **two sides of pipe - input(1) and output(0)**, To make pipe works like "|" in shell, following steps shall be taken (child | parent) ([by the way pipe run concurrently](https://unix.stackexchange.com/questions/37508/in-what-order-do-piped-commands-run))
 - fork()
 - change **stdout** to **pipe input** in child proccess
 - exec child  program
