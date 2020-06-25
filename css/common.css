@@ -13,13 +13,15 @@ body {
 }
 
 
-.code {
+code {
 	font-size: 20px;
 	font-family: "Tamzen";
-	background-color: #CECECE;
+	background-color: #DE781F;
+	/*
 	border: 3px solid #848484;
 	margin: 10px;
 	padding: 5px;
+	*/
 }
 
 .blogs {

@@ -12,12 +12,15 @@
 <h3 id="net0">NET0</h3>
 <h4 id="1-done">1 done</h4>
 <ul>
-<li>(1). struct.pack(&quot;I&quot;,1900401144) in python</li>
-<li>(2). type the output from (1)<pre><code>user@protostar:~$ echo -e &quot;`cat`&quot;|netcat 127.0.0.1 2999
+<li><p>(1). struct.pack(&quot;I&quot;,1900401144) in python</p>
+</li>
+<li><p>(2). type the output from (1)</p>
+<pre><code>user@protostar:~$ echo -e &quot;`cat`&quot;|netcat 127.0.0.1 2999
 Please send &#39;1900401144&#39; as a little endian 32bit int
 \xf8\xd1Eq
 Thank you sir/madam</code></pre></li>
-<li>what server reads<pre><code>[pid  6589] read(0, &quot;\370\321Eq&quot;, 4)    = 4</code></pre><br>
+<li><p>what server reads</p>
+<pre><code>[pid  6589] read(0, &quot;\370\321Eq&quot;, 4)    = 4</code></pre><br>
 
 
 </li>
